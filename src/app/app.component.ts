@@ -1,6 +1,6 @@
 import { Component, Input,Output,EventEmitter } from '@angular/core';
 import { Student } from './models/Student';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl ,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,5 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'Front_End';
   public std: Student;
+  
 }

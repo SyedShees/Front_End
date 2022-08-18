@@ -19,10 +19,17 @@ export class StudentsService {
     return this.httpclient.get<Student>('http://localhost/Emp/getempdetails?id='+id);
   }
 
-  delStudent(id: number): Observable<Object>
+  delStudent(id: number): Observable<any>
   {
-    return this.httpclient.delete('http://localhost/Emp/delEmp?id='+id);
-    alert("deleted");
+    return this.httpclient.post<any>('http://localhost/Emp/delEmp?id='+id,id);
+    
+  }
+
+  addStudent(name:string,department:any):Observable<any>
+  {
+    
+    
+    return this.httpclient.post<any>('http://localhost/Emp/addEmp?name='+name,name);
   }
 
 }

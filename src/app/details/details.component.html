@@ -9,7 +9,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Department</th>
-                    <th></th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -17,12 +17,10 @@
                     <td> {{inp.id}}</td>
                     <td>{{inp.name}}</td>
                     <td>{{inp.department}}</td>
-                    <td><button class="btn btn-info" value="{{inp.id}}" (click)="editStudent(inp.id)">edit</button>&nbsp;
-                    <button class="btn btn-danger" value="{{inp.id}}" (click)="delStudent(inp.id)">delete</button></td>
+
                   </tr>
                 </tbody>
             </table>
-            <label>{{inp.id}}</label>
         </div>
         <div class="col-md-3"></div>
     </div>

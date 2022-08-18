@@ -16,12 +16,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(private studentService:StudentsService) { }
 
-  delStudent(id: number): void{
-    this.studentService.delStudent(id).subscribe((data) => {alert("Successfully Deleted")
-    });
-    console.log(this.std);
-    
-  }
+  
 
   ngOnInit(): void {
   }

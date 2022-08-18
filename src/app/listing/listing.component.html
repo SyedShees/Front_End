@@ -1,13 +1,27 @@
 <div>
     <div class="row">
         <div class="col-md-3">
-            
+            <form [formGroup]="addForm" (ngSubmit)="addStudent(name.value,department.value)">
+            <input type="text" placeholder="name" formControlName="name" id="name" #name><br>
+            <input type="text" placeholder="department" formControlName="department" id="department" #department><br>
+            <button class="btn btn-success">ADD</button>
+            </form>
         </div>
         <div class="col-md-6" style="text-align: center; margin-top: 8%;">
-            <ul>
-                <li type="none" *ngFor="let s of students" (click)="details(s.id)" onMouseOver="this.style.color='blue'"
-                onMouseOut="this.style.color='black'"><strong>{{s.name}}</strong></li>
-            </ul>
+            <table border="2px solid black">
+                <tbody>
+                    <tr>
+                        <th class="col-md-4">NAME</th>
+                        <th class="col-md-2">ACTION</th>
+                    </tr>
+                    <tr type="none" *ngFor="let s of students"  onMouseOver="this.style.color='blue'"
+                    onMouseOut="this.style.color='black'">
+                        <td (click)="details(s.id)">{{s.name}}</td>
+                        <td><button class="btn btn-info" value="{{s.id}}" (click)="editStudent(s.id)">edit</button>&nbsp;
+                            <button class="btn btn-danger" value="{{s.id}}" (click)="delStudent(s.id)">delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-md-3"></div>
     </div>
